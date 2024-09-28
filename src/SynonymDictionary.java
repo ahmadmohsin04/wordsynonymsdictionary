@@ -53,5 +53,20 @@ public class SynonymDictionary {
         }
     }
     public static void main(String[] args)  {
+
+        SynonymDictionary dictionary = new SynonymDictionary();
+
+        List<String> synonyms1 = List.of("happy", "joyful", "cheerful", "content");
+        dictionary.insertWord("happy", synonyms1);
+        dictionary.searchWord("happy");
+        List<String> newSynonyms = List.of("elated", "delighted");
+        dictionary.updateWord("happy", newSynonyms, true);  // Add new synonyms
+        dictionary.searchWord("happy");
+        List<String> synonymsToRemove = List.of("joyful");
+        dictionary.updateWord("happy", synonymsToRemove, false);  // Remove synonym
+        dictionary.searchWord("happy");
+        dictionary.deleteWord("happy");
+        dictionary.searchWord("happy");
     }
 }
+
