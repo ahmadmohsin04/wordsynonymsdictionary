@@ -36,6 +36,22 @@ public class SynonymDictionary {
             System.out.println("Word \"" + word + "\" not found.");
         }
     }
+
+    public void updateWord(String word, List<String> newSynonyms, boolean add) {
+        if (synonymMap.containsKey(word)) {
+            List<String> existingSynonyms = synonymMap.get(word);
+            
+            if (add) {
+                existingSynonyms.addAll(newSynonyms);
+                System.out.println("Synonyms added for \"" + word + "\".");
+            } else {
+                existingSynonyms.removeAll(newSynonyms);
+                System.out.println("Synonyms removed for \"" + word + "\".");
+            }
+        } else {
+            System.out.println("Word \"" + word + "\" not found.");
+        }
+    }
     public static void main(String[] args)  {
     }
 }
