@@ -27,6 +27,15 @@ public class SynonymDictionary {
             System.out.println("Word \"" + word + "\" not found in the dictionary");
         }
     }
+
+    public void deleteWord(String word) {
+        if (synonymMap.containsKey(word)) {
+            synonymMap.remove(word);
+            System.out.println("Word \"" + word + "\" removed from the dictionary.");
+        } else {
+            System.out.println("Word \"" + word + "\" not found.");
+        }
+    }
     public static void main(String[] args)  {
     }
 }
