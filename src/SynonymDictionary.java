@@ -18,6 +18,15 @@ public class SynonymDictionary {
         }
         System.out.println("Word \"" + word + "\" added or updated successfully");
     }
+
+    public void searchWord(String word) {
+        if (synonymMap.containsKey(word)) {
+            List<String> synonyms = synonymMap.get(word);
+            System.out.println("Synonyms for \"" + word + "\": " + synonyms);
+        } else {
+            System.out.println("Word \"" + word + "\" not found in the dictionary");
+        }
+    }
     public static void main(String[] args)  {
     }
 }
